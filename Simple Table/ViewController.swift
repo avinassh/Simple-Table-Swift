@@ -26,6 +26,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cellIdentifier = "Cell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as UITableViewCell
         cell.textLabel.text = restaurantNames[indexPath.row]
+        cell.imageView.image = UIImage(named: "restaurant")
         return cell
     }
         
@@ -39,6 +40,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Dispose of any resources that can be recreated.
     }
 
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
 
 }
 
